@@ -1,5 +1,11 @@
+import {cartDom} from './cartDOM.js';
+import {modalDom, chargeIt, showCartItems} from './modalDOM.js';
+import {setCart} from './../helpers/data/cartData.js';
+
 const makeCart = () => {
     $("#cart").html(
+      `${cartDom()}
+      ${modalDom()}`
       );
       $('#charge-it').click(() => {
         const ccNum = $('#credit-card').val();
@@ -17,3 +23,5 @@ const makeCart = () => {
       makeCart();
     })
   }
+
+  export {addToCart};

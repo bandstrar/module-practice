@@ -1,6 +1,10 @@
 import {cartTotal} from './cartTotal.js'
+import {getCart, emptyCart} from './../helpers/data/cartData.js'
 
-const modalDom = ` 
+const modalDom = () => {
+  let domString = ''
+
+  domString += ` 
       <div class="modal fade" id="buy-modal" tabindex="-1" role="dialog" aria-labelledby="buy-modalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -35,7 +39,8 @@ const modalDom = `
         </div>
       </div>
   `
-
+  return domString;
+}
   const showCartItems = () => {
   
     let obj = {};
@@ -74,3 +79,5 @@ const modalDom = `
       )
     }
   };
+
+  export {chargeIt, showCartItems, modalDom};
